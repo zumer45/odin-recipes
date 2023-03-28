@@ -2,13 +2,8 @@
 
 :root {
   --spicy-red: #e63946;
-  --tumeric-yellow: #f1c40f;
-  --mint-green: #27ae60;
-  --cumin-brown: #8d6e63;
-  --coriander-green: #2ecc71;
   --naan-bread: #f5deb3;
-  --rice-white: #f0e68c;
-  --charcoal-tandoor: #34495e;
+  --background-gradient: linear-gradient(to bottom right, #74ebd5, #acb6e5);
 }
 
 *,
@@ -19,26 +14,26 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
   font-size: 16px;
   background-color: var(--naan-bread);
-  background-image: linear-gradient(to bottom right, #74ebd5, #acb6e5);
+  background-image: var(--background-gradient);
   color: black;
 }
 
-.pak-recipes-heading, .lassi-heading, .tikka-heading {
+header {
   text-align: center;
   margin: 20px auto;
 }
 
-.section-1 {
+main {
   text-align: center;
-}
-
-.section-1 p {
-    font-size: 1.1rem;;
 }
 
 nav {
@@ -46,6 +41,21 @@ nav {
   flex-direction: column;
   align-items: center;
   margin: 20px auto;
+}
+
+nav > ul > li {
+  list-style: none;
+  margin: 15px auto;
+  font-size: 1.5rem;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav > ul > li > a:hover {
+  color: var(--spicy-red);
 }
 
 img {
@@ -60,36 +70,48 @@ img:hover {
   transform: scaleX(-1);
 }
 
-nav > ul > li {
-  list-style: none;
-  margin: 15px auto;
-  font-size: 1.5rem;
+.ingredients,
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-nav > ul > li > a {
-  text-decoration: none;
-  color: inherit;
+.ingredients h2,
+.instructions h2 {
+  margin: 30px;
 }
 
-.bold > a:hover {
-  color: var(--spicy-red);
+.ingredients ul,
+ol {
+  list-style-type: decimal;
+  text-align: left;
+  max-width: 50%;
+  margin: 0 auto;
 }
 
-.main-page-footer {
+.instructions ul,
+ol {
+  list-style-type: disc;
+  text-align: left;
+  max-width: 50%;
+  margin: 0 auto;
+}
+li:hover::before {
+  content: "🌶️";
+  display: inline-block;
+  margin-right: 8px;
+}
+footer {
   margin-top: 20px;
   text-align: center;
 }
 
-span {
-    bold;
+.back-btn:link,
+.back-btn:hover,
+.back-btn:active,
+.back-btn:visited {
+  color: var(--spicy-red);
+  text-decoration: none;
+  font-size: 1rem;
 }
-
-/* Lassi section the above section is index.html page */
-.ingredients {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-}
-
-
